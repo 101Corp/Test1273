@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    const ip = req.ip || req.connection.remoteAddress;
+    const ip = req.ip;
     res.send(`Your IP address is: ${ip}`);
+    console.log(ip)
 });
 
 app.listen(8080, () => {
