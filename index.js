@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    const ip = req.ip;
+    const ip = req.connection.remoteAddress;
     res.send(`Your IP address is: ${ip}`);
     console.log(ip)
 });
